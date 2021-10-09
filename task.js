@@ -26,8 +26,8 @@ function worker(arr) {
   let sum = 0;
   let arrLength = arr.length;
 
-  for (i = 0; i < arrLength; i += 1) {
-    sum = sum + arr[i]; //вычисляем сумму элементов массмва arr[]
+  for (j = 0; j < arrLength; j += 1) {
+    sum = sum + arr[j]; //вычисляем сумму элементов массмва arr[]
   }
 
   return sum;
@@ -39,12 +39,9 @@ function makeWork(arrOfArr, func) {
 
   for (i = 0; i < arrOfArrLength; i += 1) {
       arrResultElement = func(arrOfArr[i]);
-      if (arrResultElement > max) {//ищем максимум
-        max = arrResultElement;
-      }
-      
-    }
-    
+      if (arrResultElement > max) max = arrResultElement;//ищем максимум
+  }
+
   return max;
 }
 
@@ -53,16 +50,12 @@ function worker2(arr) {
   let min = arr[0];
    let max = arr[0];
    let arrLength = arr.length;
-    for (i = 0; i < arrLength; i += 1) {
-      if (arr[i] < min) { //ищем минимум
-        min = arr[i]; 
-      }
-      if (arr[i] > max) {//ищем максимум
-        max = arr[i]; 
-      }
+    for (l = 0; l < arrLength; l += 1) {
+      if (arr[l] < min) min = arr[l]; //ищем минимум
+      if (arr[l] > max) max = arr[l]; //ищем максимум
     }
 
-    let delta = Math.abs(max - min); //вычисляем расстояние между мин и макс элементами массива arr[]
+    let delta = max - min; //вычисляем расстояние между мин и макс элементами массива arr[]
     
     return delta;
 }
